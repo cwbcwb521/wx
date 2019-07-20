@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from wx import views
+from django.urls import include
 
 urlpatterns = [
-    path('wx/', views.),
+    path('', include('officialAccount.urls')),
 ]
