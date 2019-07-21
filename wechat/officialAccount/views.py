@@ -22,16 +22,17 @@ def handle(request):
         logger.debug('timestamp: '+timestamp)
         logger.debug('nonce: '+nonce)
         logger.debug('echostr: '+echostr)
-        logger.debug('check ended')
-
 
         # 服务器配置中的token
         token = 'wxtest'
         # 把参数放到list中排序后合成一个字符串，再用sha1加密得到新的字符串与微信发来的signature对比，如果相同就返回echostr给服务器，校验通过
         hashlist = [token, timestamp, nonce]
         hashlist.sort()
-        hashstr = ''.join([s for s in hashlist])
+        hashstr = ''.join([s for s in hashlist]).encode("utf8")
         hashstr = hashlib.sha1(hashstr).hexdigest()
+        logger.debug('hashstr: '+hashstr)
+        logger.debug('check ended')
+
         if hashstr == signature:
             return HttpResponse(echostr)
         else:
