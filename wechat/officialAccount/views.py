@@ -9,24 +9,25 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def handle(request):
     if request.method == "GET":
-        signature = request.GET.get("signature")
-        timestamp = request.GET.get("timestamp")
-        nonce = request.GET.get("nonce")
-        echostr = request.GET.get("echostr")
-
-        token = "wxtest"
-        if signature is None:
-            return HttpResponse("no info")
-        create_list = [token, timestamp, nonce]
-        create_list.sort()
-        sha1 = hashlib.sha1()
-        map(sha1.update, create_list)
-        hashcode = sha1.hexdigest()
-        print("handle/GET func: hashcode, signature: ", hashcode, signature)
-
-        if hashcode == signature:
+        # 接收微信服务器get请求发过来的参数
+        signature = request.GET.get('signature', None)
+        timestamp = request.GET.get('timestamp', None)
+        nonce = request.GET.get('nonce', None)
+        echostr = request.GET.get('echostr', None)
+        print(signature)
+        print(timestamp)
+        print(nonce)
+        print(echostr)
+        # 服务器配置中的token
+        token = 'wxtest'
+        # 把参数放到list中排序后合成一个字符串，再用sha1加密得到新的字符串与微信发来的signature对比，如果相同就返回echostr给服务器，校验通过
+        hashlist = [token, timestamp, nonce]
+        hashlist.sort()
+        hashstr = ''.join([s for s in hashlist])
+        hashstr = hashlib.sha1(hashstr).hexdigest()
+        if hashstr == signature:
             return HttpResponse(echostr)
         else:
-            return HttpResponse("field")
+            return HttpResponse("fail")
     else:
         return HttpResponse("not get")
