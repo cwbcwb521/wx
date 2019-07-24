@@ -1,23 +1,26 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 import hashlib
+from django.views.decorators.csrf import csrf_exempt
 
+# logger
 import logging
 logger = logging.getLogger('django')
 
-# Create your views here.
-from django.views.decorators.csrf import csrf_exempt
+from officialAccount.receiveMessages import receive
+from officialAccount.receiveMessages import reply
+
 
 
 @csrf_exempt
 def handle(request):
     if request.method == "GET":
-        # 接收微信服务器get请求发过来的参数
+        # 接收微信服务器get请求发过来的参数(验证用)
         signature = request.GET.get('signature', None)
         timestamp = request.GET.get('timestamp', None)
         nonce = request.GET.get('nonce', None)
         echostr = request.GET.get('echostr', None)
-        logger.debug('check begin')
+        logger.debug('wx connect check begin')
         logger.debug('signature: ' +signature)
         logger.debug('timestamp: '+timestamp)
         logger.debug('nonce: '+nonce)
@@ -31,11 +34,31 @@ def handle(request):
         hashstr = ''.join([s for s in hashlist]).encode("utf8")
         hashstr = hashlib.sha1(hashstr).hexdigest()
         logger.debug('hashstr: '+hashstr)
-        logger.debug('check ended')
+        logger.debug('wx connect check ended')
 
         if hashstr == signature:
             return HttpResponse(echostr)
         else:
             return HttpResponse("fail")
-    else:
-        return HttpResponse("not get")
+    elif request.method == "POST":
+        json_data = request.body
+        logger.debug('post json data: '+json_data)
+        # xml convert to json data
+        rec_msg = receive.parse_xml(json_data)
+        if rec_msg is not None and rec_msg.MsgType == 'text':
+            logger.debug('receive text msg')
+            # replay text
+            content = reply.autoReplay(rec_msg.Content)
+            logger.debug('auto replay content: '+content)
+            if content is None:
+                # no data
+                return "success"
+            to_user = rec_msg.FromUserName
+            from_user = rec_msg.ToUserName
+            reply_msg = reply.TextMsg(to_user, from_user, content)
+            return reply_msg.send()
+        else:
+            # pic
+            logger.debug('暂且不处理 ')
+            return "success"
+
