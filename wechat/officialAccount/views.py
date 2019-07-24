@@ -55,7 +55,7 @@ def handle(request):
                 return HttpResponse("success")
             to_user = rec_msg.FromUserName
             from_user = rec_msg.ToUserName
-            reply_msg = reply.TextMsg(to_user, from_user, 'test')
+            reply_msg = reply.TextMsg(to_user, from_user, content)
             return HttpResponse(reply_msg.send())
         else:
             # pic
