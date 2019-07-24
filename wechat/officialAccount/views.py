@@ -52,12 +52,12 @@ def handle(request):
             logger.debug('auto replay content: ' + content)
             if content is None:
                 # no data
-                return "success"
+                return HttpResponse("success")
             to_user = rec_msg.FromUserName
             from_user = rec_msg.ToUserName
-            reply_msg = reply.TextMsg(to_user, from_user, content)
-            return reply_msg.send()
+            reply_msg = reply.TextMsg(to_user, from_user, 'test')
+            return HttpResponse(reply_msg.send())
         else:
             # pic
             logger.debug('暂且不处理 ')
-            return "success"
+            return HttpResponse("success")
