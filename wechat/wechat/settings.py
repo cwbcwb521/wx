@@ -53,7 +53,7 @@ ROOT_URLCONF = 'wechat.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'static/webapp/dist')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -115,10 +115,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# logger
-import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/webapp/dist/static"),
+]
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# logger
 BASE_LOG_DIR = os.path.join(BASE_DIR, "logs")
 
 LOGGING = {
