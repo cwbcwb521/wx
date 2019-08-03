@@ -1,17 +1,19 @@
 <!--  -->
 <template>
   <div class="navigation-bar">
-    <div class="md-layout md-gutter">
-      <div class="md-layout-item">
-        <i class="material-icons md-36">home</i>
-        <div class="split-line"></div>
-        <span class="wb-name">一只小确丧</span>
-      </div>
-      <div class="md-layout-item"></div>
-      <div class="md-layout-item">
-        <i class="material-icons md-36">explore</i>
-        <i class="material-icons md-36">favorite</i>
-        <i class="material-icons md-40">person</i>
+    <div class="nav-bar">
+      <div class="md-layout md-gutter">
+        <div class="md-layout-item">
+          <i class="material-icons md-36">home</i>
+          <div class="split-line md-xsmall-hide"></div>
+          <span class="wb-name md-xsmall-hide">一只小确丧</span>
+        </div>
+        <div class="md-layout-item"></div>
+        <div class="md-layout-item">
+          <i class="material-icons md-36">explore</i>
+          <i class="material-icons md-36">favorite</i>
+          <i class="material-icons md-40">person</i>
+        </div>
       </div>
     </div>
   </div>
@@ -48,6 +50,15 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+}
+
 .material-icons.md-36 {
   font-size: 3rem;
 }
@@ -55,16 +66,13 @@ export default {
   font-size: 3.2rem;
 }
 
-.navigation-bar{
-  border-bottom: 1px solid #ccc;
-}
 .md-layout-item {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 4rem;
 }
-.md-layout-item i{
+.md-layout-item i {
   margin-left: 1.5rem;
 }
 .wb-name {
@@ -73,9 +81,20 @@ export default {
   font-family: serif;
 }
 .split-line {
-    background-color: rgba(117, 111, 111, 0.527);
-    width: 1px;
-    height: 60%;
-    margin: 0 1.5rem;
+  background-color: #ccc;
+  width: 1px;
+  height: 60%;
+  margin: 0 1.5rem;
+}
+.nav-bar::after{
+  content: " ";
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: -1;
+  opacity: 0.9;
+  filter: blur(5px)
 }
 </style>

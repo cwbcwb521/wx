@@ -15,4 +15,5 @@ export default {
 
 <style>
 html {font-size: 62.5%}
+ul,li{ padding:0;margin:0;list-style:none}
 </style>

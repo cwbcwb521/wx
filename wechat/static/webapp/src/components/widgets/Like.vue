@@ -1,13 +1,6 @@
-<!-- Home -->
+<!-- like -->
 <template>
-  <div class="home">
-    <md-empty-state
-      md-rounded
-      md-icon="access_time"
-      md-label="Nothing in Snoozed"
-      md-description="Anything you snooze will go here until it's time for it to return to the inbox."
-    ></md-empty-state>
-  </div>
+  <div class="like">{{txt_like}}</div>
 </template>
 
 <script>
@@ -19,7 +12,9 @@ export default {
   components: {},
   data() {
     //这里存放数据
-    return {};
+    return {
+      txt_like: ""
+    };
   },
   //监听属性 类似于data概念
   computed: {},
@@ -30,7 +25,9 @@ export default {
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    this.txt_like = "10036" + "个人喜欢";
+  },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前
@@ -40,8 +37,10 @@ export default {
   activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
-<style lang="scss" scoped>
-.home{
-    margin-top: 5rem;
+<style scoped>
+.like{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 1rem 2rem;
 }
 </style>
