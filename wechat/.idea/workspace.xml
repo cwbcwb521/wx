@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f79aadfc-360c-4c9a-a627-133331eca356" name="Default Changelist" comment="添加自动回复机器人- bug fix">
+    <list default="true" id="f79aadfc-360c-4c9a-a627-133331eca356" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/webapp/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.ddb5a35b.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.2ccafd38.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.2ccafd38.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.7f729739.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/img/testpic画板 1.29466f9a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.02048dcc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.02048dcc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/src/assets/avatar/testpic画板 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/Card.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/widgets/Comment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/widgets/Comment.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +273,8 @@
       <workItem from="1564100638572" duration="8108000" />
       <workItem from="1564152002317" duration="3124000" />
       <workItem from="1564185191164" duration="199000" />
-      <workItem from="1564826010391" duration="269000" />
+      <workItem from="1564826010391" duration="894000" />
+      <workItem from="1564840662252" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="setup connection">
       <created>1563600841963</created>
@@ -366,21 +367,29 @@
       <option name="project" value="LOCAL" />
       <updated>1564154399371</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="webApp添加card">
+      <created>1564826358482</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564826358482</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31791000" />
+    <option name="totallyTimeSpent" value="32787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27382874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27786753" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -423,7 +432,8 @@
     <MESSAGE value="添加vue环境，构建网页主画面" />
     <MESSAGE value="url change" />
     <MESSAGE value="添加vue环境，构建网页主画面 bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加vue环境，构建网页主画面 bug fix" />
+    <MESSAGE value="webApp添加card" />
+    <option name="LAST_COMMIT_MESSAGE" value="webApp添加card" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wx/apps.py" />

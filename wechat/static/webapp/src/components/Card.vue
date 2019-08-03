@@ -4,8 +4,8 @@
     <md-card class="card-box">
       <!-- header -->
       <md-card-header class="card-header">
-        <md-avatar>
-          <img src="../assets/avatar/testpic画板 1.png" alt="tester" />
+        <md-avatar class="card-avatar">
+          <img src="../assets/avatar/testpic1.png" alt="tester" />
         </md-avatar>
         <md-card-header-text class="card-header-text">
           <div class="md-title">cwbcwb521</div>
@@ -115,8 +115,13 @@ export default {
 
 .card-header {
   border-bottom: 1px solid #ccc;
-  padding: 10px !important;
+  padding: 0 1rem !important;
   height: 5rem;
+  display: flex;
+  align-items: center;
+}
+.card-avatar{
+  position: relative;
 }
 .card-header-text {
   display: flex;
@@ -131,7 +136,7 @@ export default {
   margin-top: -0.1rem !important;
 }
 .md-subhead {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top: -0.5rem !important;
 }
 .text-wrapper {

@@ -3,13 +3,13 @@
   <div class="navigation-bar">
     <div class="nav-bar">
       <div class="md-layout md-gutter">
-        <div class="md-layout-item">
+        <div class="md-layout-item nav-title">
           <i class="material-icons md-36">home</i>
           <div class="split-line md-xsmall-hide"></div>
           <span class="wb-name md-xsmall-hide">一只小确丧</span>
         </div>
         <div class="md-layout-item"></div>
-        <div class="md-layout-item">
+        <div class="md-layout-item nav-action">
           <i class="material-icons md-36">explore</i>
           <i class="material-icons md-36">favorite</i>
           <i class="material-icons md-40">person</i>
@@ -72,8 +72,18 @@ export default {
   align-items: center;
   height: 4rem;
 }
+.nav-title{
+  display: flex;
+  justify-content: left;
+}
 .md-layout-item i {
   margin-left: 1.5rem;
+}
+.nav-action{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 1rem;
 }
 .wb-name {
   font-size: 2rem;

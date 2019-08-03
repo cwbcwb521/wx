@@ -91,7 +91,7 @@ export default {
   font-weight: bold;
 }
 .cmt-comment {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .cmt-btn {
   margin-right: 1.5rem;
