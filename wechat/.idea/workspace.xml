@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f79aadfc-360c-4c9a-a627-133331eca356" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/webapp/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.7f729739.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/img/testpic画板 1.29466f9a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.02048dcc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.02048dcc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/assets/avatar/testpic画板 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.39fab682.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.6ec58336.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.6ec58336.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/widgets/Comment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/widgets/Comment.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,13 +43,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/webapp/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="15" selection-start-column="15" selection-end-column="15" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logs/debug.log">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -111,11 +114,11 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/webPage/urls.py" />
         <option value="$PROJECT_DIR$/webPage/views.py" />
-        <option value="$PROJECT_DIR$/logs/debug.log" />
         <option value="$PROJECT_DIR$/static/webapp/.gitignore" />
         <option value="$PROJECT_DIR$/wechat/urls.py" />
         <option value="$PROJECT_DIR$/wechat/settings.py" />
         <option value="$PROJECT_DIR$/static/webapp/dist/index.html" />
+        <option value="$PROJECT_DIR$/logs/debug.log" />
       </list>
     </option>
   </component>
@@ -133,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,6 +200,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +277,8 @@
       <workItem from="1564152002317" duration="3124000" />
       <workItem from="1564185191164" duration="199000" />
       <workItem from="1564826010391" duration="894000" />
-      <workItem from="1564840662252" duration="371000" />
+      <workItem from="1564840662252" duration="1084000" />
+      <workItem from="1565107858727" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="setup connection">
       <created>1563600841963</created>
@@ -374,17 +378,24 @@
       <option name="project" value="LOCAL" />
       <updated>1564826358482</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="layout 调整">
+      <created>1564846118137</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564846118138</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32787000" />
+    <option name="totallyTimeSpent" value="33510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27786753" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2819063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -433,7 +444,8 @@
     <MESSAGE value="url change" />
     <MESSAGE value="添加vue环境，构建网页主画面 bug fix" />
     <MESSAGE value="webApp添加card" />
-    <option name="LAST_COMMIT_MESSAGE" value="webApp添加card" />
+    <MESSAGE value="layout 调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout 调整" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wx/apps.py" />
@@ -513,13 +525,6 @@
     <entry file="file://$PROJECT_DIR$/static/webapp/src/App.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/debug.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webPage/views.py" />
     <entry file="file://$PROJECT_DIR$/webPage/urls.py" />
     <entry file="file://$PROJECT_DIR$/webPage/tests.py" />
@@ -566,6 +571,9 @@
           <caret column="15" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/debug.log">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
