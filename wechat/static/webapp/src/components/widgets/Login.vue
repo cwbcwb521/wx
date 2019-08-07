@@ -93,9 +93,11 @@ export default {
 }
 .lgi-btn {
   margin: 10rem 0 1rem 0;
+  display: flex;
+  width: 80%;
 }
 .lgi-login,
 .lgi-cancel {
-  width: 15rem;
+  width: 50%;
 }
 </style>

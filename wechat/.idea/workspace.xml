@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79aadfc-360c-4c9a-a627-133331eca356" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/webapp/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.39fab682.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.6ec58336.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.6ec58336.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/NavigationBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/css/app.71acddbe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.c144ad7d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/dist/static/js/app.c144ad7d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webapp/src/components/widgets/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/static/webapp/src/components/widgets/Login.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +276,7 @@
       <workItem from="1564185191164" duration="199000" />
       <workItem from="1564826010391" duration="894000" />
       <workItem from="1564840662252" duration="1084000" />
-      <workItem from="1565107858727" duration="10000" />
+      <workItem from="1565107858727" duration="383000" />
     </task>
     <task id="LOCAL-00001" summary="setup connection">
       <created>1563600841963</created>
@@ -385,29 +383,36 @@
       <option name="project" value="LOCAL" />
       <updated>1564846118138</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="login html作成">
+      <created>1565107953413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1565107953413</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33510000" />
+    <option name="totallyTimeSpent" value="33883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2819063" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2819063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49757674" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5016155" side_tool="true" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5024233" side_tool="true" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" weight="0.329927" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -445,7 +450,8 @@
     <MESSAGE value="添加vue环境，构建网页主画面 bug fix" />
     <MESSAGE value="webApp添加card" />
     <MESSAGE value="layout 调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout 调整" />
+    <MESSAGE value="login html作成" />
+    <option name="LAST_COMMIT_MESSAGE" value="login html作成" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wx/apps.py" />
