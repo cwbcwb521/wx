@@ -1,26 +1,29 @@
-<!--  -->
+<!-- user -->
 <template>
-  <div class="index">
-    <NavigationBar></NavigationBar>
-    <router-view></router-view>
-    
+  <div class="user">
+    <div class="user-info">
+      <div class="user-pic">
+        <md-avatar class="md-large">
+          <img src="../assets/avatar/testpic1.png" alt="User" />
+        </md-avatar>
+      </div>
+      <dir class="user-txt">
+          <h1>sloth</h1>
+      </dir>
+    </div>
   </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import NavigationBar from "../components/NavigationBar";
 
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {
-    NavigationBar,
-  },
+  components: {},
   data() {
     //这里存放数据
-    return {
-    };
+    return {};
   },
   //监听属性 类似于data概念
   computed: {},
@@ -41,5 +44,12 @@ export default {
   activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
-<style lang='scss' scoped>
+<style scoped>
+.user {
+  margin-top: 4rem;
+}
+.md-large{
+    width: 10rem;
+    height: 10rem;
+}
 </style>

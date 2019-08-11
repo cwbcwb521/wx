@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="login">
+  <div class="register">
     <md-dialog
       :md-active.sync="dlg_status"
       :md-close-on-esc="false"
@@ -8,7 +8,7 @@
       :md-fullscreen="false"
       class="lgi-dlg"
     >
-      <md-dialog-title>登录</md-dialog-title>
+      <md-dialog-title>注册</md-dialog-title>
       <div class="lgi-ipt">
         <md-field class="lgi-account" :md-counter="false">
           <label>账号</label>
@@ -18,10 +18,14 @@
           <label>密码</label>
           <md-input type="password" :maxlength="30"></md-input>
         </md-field>
-        <div class="lgi-register" @click="loginCancel(2)">还没有账号？立即注册</div>
+        <md-field class="lgi-pwd" :md-counter="false">
+          <label>再次输入密码</label>
+          <md-input type="password" :maxlength="30"></md-input>
+        </md-field>
+        <div class="lgi-register" @click="registeCancel(2)">已有账号，立即登录</div>
         <div class="lgi-btn">
-          <md-button class="md-raised lgi-login">登录</md-button>
-          <md-button class="md-raised lgi-cancel" @click="loginCancel(1)">取消</md-button>
+          <md-button class="md-raised lgi-login">注册</md-button>
+          <md-button class="md-raised lgi-cancel" @click="registeCancel(1)">取消</md-button>
         </div>
       </div>
     </md-dialog>
@@ -42,18 +46,18 @@ export default {
     };
   },
   props: {
-    /** 父页面传来的是否打开dialog信息 */
-    loginStatus: {
+    // 当前注册窗口打开状态
+    registerStatus: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {
-    loginStatus: function() {
-      this.dlg_status = this.loginStatus;
+    registerStatus: function() {
+      this.dlg_status = this.registerStatus;
     }
   },
   //方法集合
@@ -61,19 +65,21 @@ export default {
     /**
      * @param type{number} 1:cancel/ 2:cancel&registe
      */
-    loginCancel: function(type) {
+    registeCancel: function(type) {
       this.dlg_status = false;
       if (type === 1) {
-        this.$emit("loginCancel", false);
+        this.$emit("registeCancel", false);
       } else if (type === 2) {
-        this.$emit("loginCancel", false, true);
+        this.$emit("registeCancel", false, true);
       }
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    this.registerStatus?this.dlg_status=true:this.dlg_status=false;
+  },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前
@@ -86,7 +92,7 @@ export default {
 <style scoped>
 .lgi-dlg {
   width: 40rem;
-  /* height: 35rem; */
+  /* height: auto; */
   overflow-y: scroll;
 }
 .lgi-ipt {

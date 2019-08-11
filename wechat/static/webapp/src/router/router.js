@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 
 // 引入组件
 import Index from "../pages/index.vue";
-import Login from "../pages/login.vue";
+import Home from "../pages/home.vue";
+import User from "../pages/user.vue";
 
 // 要告诉 vue 使用 vueRouter
 Vue.use(VueRouter);
@@ -12,13 +13,22 @@ const routes = [
     {
         path:"/",
         name:"index",
-        component: Index
+        component: Index,
+        redirect:"/home",
+        children:[
+            {
+                path:"/home",
+                name:"home",
+                component: Home
+            },
+            {
+                path:"/user",
+                name:"user",
+                component: User
+            }
+        ]
     },
-    {
-        path:"/login",
-        name:"login",
-        component: Login
-    }
+    
 ]
 
 var router =  new VueRouter({

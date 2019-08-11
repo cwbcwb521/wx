@@ -12,11 +12,15 @@
         <div class="md-layout-item nav-action">
           <i class="material-icons md-36">explore</i>
           <i class="material-icons md-36">favorite</i>
-          <i class="material-icons md-40" @click="btn_person">person</i>
+          <i class="material-icons md-40" @click="btn_person" v-show="!hasUserInfo">person</i> 
+          <router-link tag="i" class="material-icons md-40" to="/user"  v-show="hasUserInfo">person</router-link> 
         </div>
       </div>
     </div>
-    <Login :hasUserInfo="hasUserInfo" :dlgStatusChange="dlgStatusChange"></Login>
+    <Login :loginStatus="loginStatus"
+     @loginCancel="loginCancel"
+     ></Login>
+    <Register :registerStatus="registerStatus" @registeCancel="registeCancel"></Register>
   </div>
 </template>
 
@@ -24,17 +28,23 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 
 import Login from "./widgets/Login"
+import Register from "./widgets/Register"
 
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
     Login,
+    Register
   },
   data() {
     //这里存放数据
     return {
+      // 是否已经登录
       hasUserInfo : false,
-      dlgStatusChange: false,
+      // 登录界面开关
+      loginStatus: false,
+      // 注册界面开关
+      registerStatus:false,
     };
   },
   //监听属性 类似于data概念
@@ -43,16 +53,25 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    /** 点击个人图标 */
     btn_person : function(){
-      this.hasUserInfo = true;
-      this.dlgStatusChange = !this.dlgStatusChange;
-    }
+      this.loginStatus = true;
+    },
+    /** 登录页面取消 */
+    loginCancel:function(isCancel=false,isRegiste=false){
+      this.loginStatus = isCancel;
+      this.registerStatus = isRegiste;
+    },
+    /** 注册页面取消 */
+    registeCancel:function(isCancel=false,isLogin=false){
+      this.registerStatus = isCancel;
+      this.loginStatus = isLogin;
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-    
   },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
