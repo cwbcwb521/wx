@@ -85,4 +85,12 @@ text-align:left;
 q:before, q:after, blockquote:before, blockquote:after {
 content:””;
 }
+
+/* material css change */
+.md-tabs.md-theme-default .md-tabs-navigation .md-button.md-active{
+  color: #000!important;
+}
+.md-tabs.md-theme-default .md-tabs-indicator{
+  background-color: #000!important;
+}
 </style>

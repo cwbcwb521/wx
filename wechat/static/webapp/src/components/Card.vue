@@ -1,58 +1,60 @@
 <!-- Card -->
 <template>
-  <div class="card">
-    <md-card class="card-box">
-      <!-- header -->
-      <md-card-header class="card-header">
-        <md-avatar class="card-avatar">
-          <img src="../assets/avatar/testpic1.png" alt="tester" />
-        </md-avatar>
-        <md-card-header-text class="card-header-text">
-          <div class="md-title">cwbcwb521</div>
-          <div class="md-subhead">东京</div>
-        </md-card-header-text>
+  <ul class="cpnt-card">
+    <li v-for="item in cardList" :key="item.id" class="card">
+      <md-card class="card-box">
+        <!-- header -->
+        <md-card-header class="card-header">
+          <md-avatar class="card-avatar">
+            <img src="../assets/avatar/testpic1.png" alt="tester" />
+          </md-avatar>
+          <md-card-header-text class="card-header-text">
+            <div class="md-title">cwbcwb521</div>
+            <div class="md-subhead">东京</div>
+          </md-card-header-text>
 
-        <md-menu md-size="auto" md-direction="bottom-start" md-align-trigger>
-          <md-button class="md-icon-button" md-menu-trigger>
-            <md-icon>more_vert</md-icon>
+          <md-menu md-size="auto" md-direction="bottom-start" md-align-trigger>
+            <md-button class="md-icon-button" md-menu-trigger>
+              <md-icon>more_vert</md-icon>
+            </md-button>
+            <md-menu-content>
+              <md-menu-item>
+                <span>复制链接</span>
+              </md-menu-item>
+
+              <md-menu-item>
+                <span>举报</span>
+              </md-menu-item>
+
+              <md-menu-item>
+                <span>取消</span>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-card-header>
+        <!-- content -->
+        <md-card-content class="text-wrapper">{{txt_content}}</md-card-content>
+        <!-- action -->
+        <md-card-actions md-alignment="left" class="card-action">
+          <md-button class="md-icon-button">
+            <md-icon>favorite_border</md-icon>
           </md-button>
-          <md-menu-content>
-            <md-menu-item>
-              <span>复制链接</span>
-            </md-menu-item>
 
-            <md-menu-item>
-              <span>举报</span>
-            </md-menu-item>
+          <md-button class="md-icon-button">
+            <md-icon>message</md-icon>
+          </md-button>
 
-            <md-menu-item>
-              <span>取消</span>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
-      </md-card-header>
-      <!-- content -->
-      <md-card-content class="text-wrapper">{{txt_content}}</md-card-content>
-      <!-- action -->
-      <md-card-actions md-alignment="left" class="card-action">
-        <md-button class="md-icon-button">
-          <md-icon>favorite_border</md-icon>
-        </md-button>
-
-        <md-button class="md-icon-button">
-          <md-icon>message</md-icon>
-        </md-button>
-
-        <md-button class="md-icon-button">
-          <md-icon>share</md-icon>
-        </md-button>
-      </md-card-actions>
-      <!-- like -->
-      <Like></Like>
-      <!-- comment -->
-      <Comment></Comment>
-    </md-card>
-  </div>
+          <md-button class="md-icon-button">
+            <md-icon>share</md-icon>
+          </md-button>
+        </md-card-actions>
+        <!-- like -->
+        <Like></Like>
+        <!-- comment -->
+        <Comment></Comment>
+      </md-card>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -72,6 +74,12 @@ export default {
     return {
       txt_content: ""
     };
+  },
+  props:{
+    cardList:{
+      type:Array,
+      default:()=>{[]},
+    }
   },
   //监听属性 类似于data概念
   computed: {},
@@ -103,6 +111,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
+.cpnt-card {
+  margin-top: 4rem;
+}
 .card {
   margin-top: 3rem;
   display: flex;
@@ -120,7 +132,7 @@ export default {
   display: flex;
   align-items: center;
 }
-.card-avatar{
+.card-avatar {
   position: relative;
 }
 .card-header-text {

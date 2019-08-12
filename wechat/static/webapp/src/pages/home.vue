@@ -1,11 +1,7 @@
 <!-- home -->
 <template>
 <div class='home'>
-    <ul class="cpnt-card">
-      <li v-for="item in cardList" :key="item.id">
-        <Card></Card>
-      </li>
-    </ul>
+        <Card :cardList="cardList"></Card>
 </div>
 </template>
 
@@ -58,7 +54,4 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style scoped>
-.cpnt-card {
-  margin-top: 4rem;
-}
 </style>

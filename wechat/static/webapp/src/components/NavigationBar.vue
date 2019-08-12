@@ -4,7 +4,7 @@
     <div class="nav-bar">
       <div class="md-layout md-gutter">
         <div class="md-layout-item nav-title">
-          <i class="material-icons md-36">home</i>
+          <router-link tag="i" class="material-icons md-36" to="/">home</router-link> 
           <div class="split-line md-xsmall-hide"></div>
           <span class="wb-name md-xsmall-hide">一只小确丧</span>
         </div>
@@ -40,7 +40,7 @@ export default {
     //这里存放数据
     return {
       // 是否已经登录
-      hasUserInfo : false,
+      hasUserInfo : true,
       // 登录界面开关
       loginStatus: false,
       // 注册界面开关
