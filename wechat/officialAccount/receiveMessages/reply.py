@@ -2,7 +2,6 @@
 # filename: reply.py
 
 import time
-import requests
 import logging
 logger = logging.getLogger('django')
 
@@ -57,15 +56,3 @@ class ImageMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
-
-
-# 自动回复
-def autoReplay(msg):
-    url = 'http://api.qingyunke.com/api.php?key=free&appid=0&msg=' + msg.decode("utf8")
-    req = requests.get(url)
-    jsonData = req.json()
-    jsonData['content'] = jsonData['content'].replace('菲菲', '小确丧')
-    if jsonData['result'] == 0:
-        return jsonData['content']
-    else:
-        return None

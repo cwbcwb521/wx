@@ -9,8 +9,7 @@ import logging
 logger = logging.getLogger('django')
 
 from officialAccount.receiveMessages import receive
-from officialAccount.receiveMessages import reply
-
+from officialAccount.receiveMessages import autoReplayMessage
 
 @csrf_exempt
 def handle(request):
@@ -46,17 +45,9 @@ def handle(request):
         # xml convert to json data
         rec_msg = receive.parse_xml(json_data)
         if rec_msg is not None and rec_msg.MsgType == 'text':
-            logger.debug('receive text msg')
+            logger.debug('receive text msg, start auto reply')
             # replay text
-            content = reply.autoReplay(rec_msg.Content)
-            logger.debug('auto replay content: ' + content)
-            if content is None:
-                # no data
-                return HttpResponse("success")
-            to_user = rec_msg.FromUserName
-            from_user = rec_msg.ToUserName
-            reply_msg = reply.TextMsg(to_user, from_user, content)
-            return HttpResponse(reply_msg.send())
+            return autoReplayMessage.replayTextMsg(rec_msg)
         else:
             # pic
             logger.debug('暂且不处理 ')
