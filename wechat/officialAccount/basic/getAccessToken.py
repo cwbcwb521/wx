@@ -28,8 +28,8 @@ class Basic:
         self.__accessToken = urlResp['access_token']
         self.__leftTime = urlResp['expires_in']
         logger.debug('[method] get access token over')
-        logger.debug('[method] __accessToken : ' + self.__accessToken)
-        logger.debug('[method] __leftTime : ' + self.__leftTime)
+        logger.debug('[method] __accessToken : ' + str(self.__accessToken))
+        logger.debug('[method] __leftTime : ' + str(self.__leftTime))
 
     def get_access_token(self):
         if self.__leftTime < 10:
