@@ -11,6 +11,7 @@ logger = logging.getLogger('django')
 from officialAccount.receiveMessages import receive
 from officialAccount.receiveMessages import autoReplayMessage
 
+
 @csrf_exempt
 def handle(request):
     if request.method == "GET":
@@ -45,6 +46,11 @@ def handle(request):
         # xml convert to json data
         rec_msg = receive.parse_xml(json_data)
         if rec_msg is not None and rec_msg.MsgType == 'text':
+            # get accessToken
+            if rec_msg.Content.decode("utf8") == 'get accessToken':
+
+                logger.debug('create menu success')
+                return autoReplayMessage.replayTextMsg(rec_msg, '获取成功')
             logger.debug('receive text msg, start auto reply')
             # replay text
             return autoReplayMessage.replayTextMsg(rec_msg)

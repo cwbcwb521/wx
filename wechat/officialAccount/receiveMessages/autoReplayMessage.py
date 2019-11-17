@@ -8,8 +8,12 @@ logger = logging.getLogger('django')
 
 from officialAccount.receiveMessages import reply
 
-def replayTextMsg(rec_msg):
-    content = autoReplay(rec_msg.Content)
+
+def replayTextMsg(rec_msg, custom=None):
+    if custom is None:
+        content = autoReplay(rec_msg.Content)
+    else:
+        content = custom
     logger.debug('auto replay content: ' + content)
     if content is None:
         # no data
@@ -19,6 +23,7 @@ def replayTextMsg(rec_msg):
     from_user = rec_msg.ToUserName
     reply_msg = reply.TextMsg(to_user, from_user, content)
     return HttpResponse(reply_msg.send())
+
 
 # 自动回复
 def autoReplay(msg):
