@@ -16,7 +16,9 @@ Including another URLconf
 
 from django.urls import path
 from officialAccount import views
+from officialAccount.menu import menu
 
 urlpatterns = [
     path('wx/', views.handle, name='handle'),
+    path('wx/createmenu', menu.createmenu, name='createmenu'),
 ]

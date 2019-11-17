@@ -10,7 +10,10 @@ logger = logging.getLogger('django')
 
 from officialAccount.receiveMessages import receive
 from officialAccount.receiveMessages import autoReplayMessage
+from officialAccount.basic import getAccessToken
 
+# thread
+import threading
 
 @csrf_exempt
 def handle(request):
@@ -35,6 +38,12 @@ def handle(request):
         hashstr = hashlib.sha1(hashstr).hexdigest()
         logger.debug('hashstr: ' + hashstr)
         logger.debug('wx connect check ended')
+
+        # start threading run accesstoken
+        logger.debug('run accesstoken start')
+        t = threading.Thread(target=getAccessToken.Basic.run, args=())
+        t.start()
+        logger.debug('run accesstoken end')
 
         if hashstr == signature:
             return HttpResponse(echostr)

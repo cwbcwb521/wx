@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
 # filename: menu.py
-import urllib
+import urllib.request
 from officialAccount.basic import getAccessToken
+from django.http import JsonResponse, HttpResponse
+import hashlib
+from django.views.decorators.csrf import csrf_exempt
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 # logger
 import logging
 logger = logging.getLogger('django')
@@ -16,29 +23,31 @@ class Menu(object):
         postUrl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % accessToken
         if isinstance(postData, str):
             postData = postData.encode('utf-8')
-        urlResp = urllib.urlopen(url=postUrl, data=postData)
+        urlResp = urllib.request.urlopen(url=postUrl, data=postData)
         logger.debug(urlResp.read())
 
     def query(self, accessToken):
         logger.debug('query menu')
         postUrl = "https://api.weixin.qq.com/cgi-bin/menu/get?access_token=%s" % accessToken
-        urlResp = urllib.urlopen(url=postUrl)
+        urlResp = urllib.request.urlopen(url=postUrl)
         logger.debug(urlResp.read())
 
     def delete(self, accessToken):
         logger.debug('delete menu')
         postUrl = "https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=%s" % accessToken
-        urlResp = urllib.urlopen(url=postUrl)
+        urlResp = urllib.request.urlopen(url=postUrl)
         logger.debug(urlResp.read())
 
     #获取自定义菜单配置接口
     def get_current_selfmenu_info(self, accessToken):
         logger.debug('get current self menu info')
         postUrl = "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token=%s" % accessToken
-        urlResp = urllib.urlopen(url=postUrl)
+        urlResp = urllib.request.urlopen(url=postUrl)
         logger.debug(urlResp.read())
 
-if __name__ == '__main__':
+
+@csrf_exempt
+def createmenu(request):
     logger.debug('start menu option')
     myMenu = Menu()
     postJson = """
@@ -86,3 +95,5 @@ if __name__ == '__main__':
 
     logger.debug('start create menu')
     myMenu.create(postJson, accessToken)
+
+    return HttpResponse("success")
