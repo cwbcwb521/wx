@@ -3,7 +3,7 @@
   <div class="index">
     <NavigationBar></NavigationBar>
     <router-view></router-view>
-    
+    <div class="root">© 2019-2029 xiaoquesang.com 一只小确丧 版权所有 <a href="http://www.beian.miit.gov.cn">辽ICP备19011953号-1</a></div>
   </div>
 </template>
 
@@ -42,4 +42,12 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.root{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.root a{
+  margin-left: 10px;
+}
 </style>
