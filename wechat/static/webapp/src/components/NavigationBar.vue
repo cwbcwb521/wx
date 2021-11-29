@@ -10,7 +10,7 @@
         </div>
         <div class="md-layout-item"></div>
         <div class="md-layout-item nav-action">
-          <i class="material-icons md-36">explore</i>
+          <router-link tag="i" class="material-icons md-36" to="/jisuan">explore</router-link> 
           <i class="material-icons md-36">favorite</i>
           <i class="material-icons md-40" @click="btn_person" v-show="!hasUserInfo">person</i> 
           <router-link tag="i" class="material-icons md-40" to="/user"  v-show="hasUserInfo">person</router-link> 
