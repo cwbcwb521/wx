@@ -114,32 +114,32 @@ export default {
 
         var getRate_95_div = document.createElement('div');
         getRate_95_div.id = 'getRate_95_div';
-        getRate_95_div.innerText = '实际回报率(含初期费用)(95%在租): ' + getRate_95 + '日元';
+        getRate_95_div.innerText = '实际回报率(含初期费用)(95%在租): ' + getRate_95 + '%';
         result.appendChild(getRate_95_div);
 
         var getRate_100_div = document.createElement('div');
         getRate_100_div.id = 'getRate_100_div';
-        getRate_100_div.innerText = '实际回报率(含初期费用)(100%在租): ' + getRate_100 + '日元';
+        getRate_100_div.innerText = '实际回报率(含初期费用)(100%在租): ' + getRate_100 + '%';
         result.appendChild(getRate_100_div);
 
         var dreamRate_95_div = document.createElement('div');
         dreamRate_95_div.id = 'getRate_100_div';
-        dreamRate_95_div.innerText = '实际回报率(不含初期费用)(95%在租): ' + dreamRate_95 + '日元';
+        dreamRate_95_div.innerText = '实际回报率(不含初期费用)(95%在租): ' + dreamRate_95 + '%';
         result.appendChild(dreamRate_95_div);
 
         var dreamRate_100_div = document.createElement('div');
         dreamRate_100_div.id = 'getRate_100_div';
-        dreamRate_100_div.innerText = '实际回报率(不含初期费用)(100%在租): ' + dreamRate_100 + '日元';
+        dreamRate_100_div.innerText = '实际回报率(不含初期费用)(100%在租): ' + dreamRate_100 + '%';
         result.appendChild(dreamRate_100_div);
 
         var biaohui_div = document.createElement('div');
         biaohui_div.id = 'getRate_100_div';
-        biaohui_div.innerText = '表回(中介): ' + biaohui + '日元';
+        biaohui_div.innerText = '表回(中介): ' + biaohui + '%';
         result.appendChild(biaohui_div);
 
         var shihui_div = document.createElement('div');
         shihui_div.id = 'getRate_100_div';
-        shihui_div.innerText = '实回(中介): ' + shihui + '日元';
+        shihui_div.innerText = '实回(中介): ' + shihui + '%';
         result.appendChild(shihui_div);
 
     }
